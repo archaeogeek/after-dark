@@ -44,7 +44,11 @@
   </head>
   {{ $theme_variant := .Site.Params.theme_variant | default "hack dark" }}
   <body class="{{ $theme_variant }} main container">
-    <header>{{ block "header" . }}{{ end }}</header>
+    <header>{{ block "header" . }}{{ end }}
+      {{ "<!-- isso -->" | safeHTML }}
+      <script data-isso="http://search.archaeogeek.com/isso/" src="http://search.archaeogeek.com/isso/js/embed.min.js"></script>
+      {{ "<!-- end isso -->" | safeHTML }}
+    </header>
     <main>{{ block "main" . }}{{ end }}</main>
     <footer>{{ block "footer" . }}{{ end }}</footer>
   </body>
